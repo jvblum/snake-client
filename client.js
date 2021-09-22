@@ -17,7 +17,6 @@ const connect = function () {
     const name = "JVM"
     console.log("Successfully connected to game server!👌");
     conn.write(`Name: ${name}`);
-
   });
   conn.on("data", (data) => {
     console.log(data)
