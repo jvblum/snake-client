@@ -13,11 +13,15 @@ const connect = function () {
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
-  conn.on("data", (data) => {
-    console.log("something happens", data)
-  });
-  
+  conn.on('connect', () => {
+    const name = "JVM"
+    console.log("Successfully connected to game server!👌");
+    conn.write(`Name: ${name}`);
 
+  });
+  conn.on("data", (data) => {
+    console.log(data)
+  });
   console.log("Connecting ...");
 
   return conn;
@@ -25,6 +29,6 @@ const connect = function () {
 
 
 // console.log("Connecting ...");
-connect();
+// connect();
 
 module.exports = connect;
