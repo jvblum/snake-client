@@ -21,7 +21,6 @@ const connect = function () {
   conn.on("data", (data) => {
     console.log(data)
   });
-  console.log("Connecting ...");
 
   return conn;
 };

@@ -6,5 +6,5 @@ const client = require("./client");
 const input = require("./input");
 
 console.log("Connecting ...");
-input();
-client();
+input(client());
+// client();
