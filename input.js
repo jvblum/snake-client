@@ -1,5 +1,4 @@
-const { clear } = require("console");
-
+const com = require("./constants").com;
 let connection;
 
 const setupInput = conn => {
@@ -14,18 +13,17 @@ const setupInput = conn => {
 };
 
 const handleUserInput = key => {
-  let com;
-  const validKeys = ['\u0003', ',', 'a', 'o', 'e'];
   if (key === '\u0003') process.exit();
 
-  if (key === ",") com = "Move: up";
-  if (key === "a") com = "Move: left";
-  if (key === "o") com = "Move: down";
-  if (key === "e") com = "Move: right";
-  if (key === "1") com = "Say: no one will know i'm"
-  if (key === "2") com = "Say: don't even";
+  // if (key === ",") com = "Move: up";
+  // if (key === "a") com = "Move: left";
+  // if (key === "o") com = "Move: down";
+  // if (key === "e") com = "Move: right";
+  // if (key === "1") com = "Say: no one will know i'm"
+  // if (key === "2") com = "Say: don't even";
  
-  connection.write(com);
+  console.log(key, com[key])
+  connection.write(com[key]);
 
   // if (!isNaN(key)) console.log(key); // test
 };
